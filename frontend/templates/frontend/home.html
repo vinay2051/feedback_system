@@ -1,0 +1,23 @@
+{% extends 'frontend/base.html' %} {% block page%}
+<div id="hero-image">
+    <h1 id="hero-title">
+        {{ name }}
+    </h1>
+</div>
+
+<div id="posters-wrapper" class="content-padding clearfix">
+    {% for movie in movies %}
+    <div class="poster">
+        <a href="/star_wars_episode/{{ movie.episode_number }}">
+            <div class="poster-info-overlay">
+                <h3>
+                    {{ name }}
+                </h3>
+                <h4>View More <i class="fa fa-arrow-right"></i></h4>
+            </div>
+        </a>
+        <img src="../../static/assets/{{movie.poster}}" class="img-responsive">
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
