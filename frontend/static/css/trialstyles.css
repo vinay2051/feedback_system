@@ -1,0 +1,354 @@
+html,
+body {
+    font-family: 'Quicksand', sans-serif;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #ffffff;
+}
+
+.slide-wrapper {
+    height: 98%;
+    width: 100%;
+}
+
+.vinay {
+    position: absolute;
+    bottom: 2%;
+    left: 10%;
+    text-align: center;
+    color: #f67954;
+}
+
+.arun {
+    position: absolute;
+    bottom: 2%;
+    right: 10%;
+    text-align: center;
+    color: #f67954;
+}
+
+.pagination-wrapper {
+    font-size: 0;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+}
+
+@keyframes pagination-container--animation-prev {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(18px);
+    }
+}
+
+@keyframes pagination-container--animation-next {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-18px);
+    }
+}
+
+.transition-prev .pagination-container {
+    animation: pagination-container--animation-prev 0.3s forwards;
+}
+
+.transition-next .pagination-container {
+    animation: pagination-container--animation-next 0.3s forwards;
+}
+
+.little-dot {
+    width: 6px;
+    height: 6px;
+    background: #393994;
+    border-radius: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 6px;
+    position: relative;
+    z-index: 10;
+}
+
+.little-dot--first,
+.little-dot--last {
+    z-index: 5;
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-18px);
+    }
+}
+
+.transition-prev .little-dot--first {
+    animation: slideLeft 0.4s 0.3s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes little-dot--first--animation {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.transition-next .little-dot--first {
+    animation: little-dot--last--animation 0.3s forwards;
+}
+
+@keyframes little-dot--last--animation {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.transition-prev .little-dot--last {
+    animation: little-dot--last--animation 0.3s forwards;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(18px);
+        opacity: 1;
+    }
+}
+
+.transition-next .little-dot--last {
+    animation: slideRight 0.4s 0.3s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.big-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background: #f6af54;
+    position: absolute;
+    top: 50%;
+    right: -6px;
+    transform: translateY(-50%);
+}
+
+.transition-next .big-dot {
+    right: auto;
+    left: -6px;
+}
+
+.big-dot-container {
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    right: 3px;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.transition-next .big-dot-container {
+    right: auto;
+    left: 3px;
+}
+
+@keyframes big-dot-container--animation-prev {
+    0% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(-50%) rotate(-179deg);
+    }
+}
+
+@keyframes big-dot-container--animation-next {
+    0% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(-50%) rotate(-181deg);
+    }
+}
+
+.transition-prev .big-dot-container {
+    animation: big-dot-container--animation-prev 0.3s forwards;
+}
+
+.transition-next .big-dot-container {
+    animation: big-dot-container--animation-next 0.3s forwards;
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: #393994;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.6;
+}
+
+.btn--next {
+    left: calc(100% + 20px);
+}
+
+.btn--prev {
+    right: calc(100% + 20px);
+}
+
+#slides {
+    position: relative;
+    height: 99.8%;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+.slide {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.showing {
+    opacity: 1;
+}
+
+.pad {
+    padding-left: 50px;
+}
+
+.slide {
+    font-size: 30px;
+    box-sizing: border-box;
+    background: #fff;
+    color: #4a4a4a;
+}
+
+.main-title {
+    text-align: center;
+}
+
+.bg-img {
+    margin-top: 100px;
+    background-position: center;
+    width: 100%;
+    height: 50%;
+    background-repeat: no-repeat;
+    background-image: url(main_icon.png);
+    background-size: contain;
+}
+
+.bg-evol {
+    margin-top: 80px;
+    background-position: center;
+    width: 100%;
+    height: 50%;
+    background-repeat: no-repeat;
+    background-image: url(evolution.jpg);
+    background-size: contain;
+}
+
+.bg-struct {
+    margin-top: 80px;
+    background-position: center;
+    width: 100%;
+    height: 50%;
+    background-repeat: no-repeat;
+    background-image: url(struct.png);
+    background-size: contain;
+}
+
+.bg-thank {
+    margin-top: 200px;
+    background-position: center;
+    width: 100%;
+    height: 20%;
+    background-repeat: no-repeat;
+    background-image: url(thank.png);
+    background-size: contain;
+}
+
+.bg-disc {
+    margin-top: 50px;
+    background-position: center;
+    width: 100%;
+    height: 30%;
+    background-repeat: no-repeat;
+    background-image: url(disclaimer.png);
+    background-size: contain;
+}
+
+.page-count {
+    padding-right: 15px;
+    font-size: 20px;
+    float: right;
+}
+
+.col-md-6 {
+    text-align: center;
+    float: left;
+    width: 50%;
+    height: 30px;
+}
+
+.col-md-4 {
+    text-align: center;
+    float: left;
+    width: 33.33%;
+    height: 30px;
+}
+
+.lines {
+    padding-left: 50px;
+    float: left;
+    margin-top: 250px;
+}
+
+.lines>ul>li {
+    padding-top: 10px;
+}
+
+.col-md-6>.lines {
+    padding-left: 50px;
+    float: left;
+    text-align: left;
+    margin-top: 50px;
+}
+
+.col-md-3 {
+    text-align: center;
+    float: left;
+    width: 25%;
+    height: 30px;
+}
+
+.span {
+    color: #d15122;
+}
