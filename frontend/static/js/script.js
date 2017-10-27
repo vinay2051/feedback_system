@@ -40,12 +40,20 @@ $(document).keyup(function(e) {
 });
 
 var slides = document.querySelectorAll('#slides .slide');
+var leftOption = document.getElementsByClassName('left');
 var currentSlide = 0;
+
+questionNumber();
+
+function questionNumber() {
+    leftOption[0].innerHTML = '<h3>' + (currentSlide + 1) + '/' + slides.length + '</h3>';
+}
 
 function nextSlide() {
     slides[currentSlide].className = 'slide';
     currentSlide = (currentSlide + 1) % slides.length;
     slides[currentSlide].className = 'slide showing';
+    questionNumber();
 }
 
 function prevSlide() {
@@ -54,4 +62,5 @@ function prevSlide() {
         currentSlide = slides.length - 1;
     } else { currentSlide = (currentSlide - 1) % slides.length; }
     slides[currentSlide].className = 'slide showing';
+    questionNumber();
 }

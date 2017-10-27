@@ -1,23 +1,44 @@
 {% extends 'frontend/base.html' %} {% block page%}
-<div id="hero-image">
-    <h1 id="hero-title">
-        {{ name }}
-    </h1>
-</div>
+<div class="slide-wrapper">
+    <ul id="slides">
+        {% for question in questions %} {% if question.id == 1 %}
+        <li class="slide showing">
+            {% else %}
+            <li class="slide">
+                {% endif %}
+                <div class="question">
+                    <h1>{{ question.question }}</h1>
+                </div>
+            </li>
 
-<div id="posters-wrapper" class="content-padding clearfix">
-    {% for movie in movies %}
-    <div class="poster">
-        <a href="/star_wars_episode/{{ movie.episode_number }}">
-            <div class="poster-info-overlay">
-                <h3>
-                    {{ name }}
-                </h3>
-                <h4>View More <i class="fa fa-arrow-right"></i></h4>
+            {% endfor %}
+    </ul>
+</div>
+<div class="option left">
+    <h3>@left</h3>
+</div>
+<div class="pagination-wrapper">
+    <svg class="btn btn--prev" height="96" viewBox="0 0 24 24" width="96" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"/>
+        <path d="M0-.5h24v24H0z" fill="none"/>
+    </svg>
+
+    <div class="pagination-container">
+        <div class="little-dot  little-dot--first"></div>
+        <div class="little-dot">
+            <div class="big-dot-container">
+                <div class="big-dot"></div>
             </div>
-        </a>
-        <img src="../../static/assets/{{movie.poster}}" class="img-responsive">
+        </div>
+        <div class="little-dot  little-dot--last"></div>
     </div>
-    {% endfor %}
+
+    <svg class="btn btn--next" height="96" viewBox="0 0 24 24" width="96" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/>
+        <path d="M0-.25h24v24H0z" fill="none"/>
+    </svg>
+</div>
+<div class="option right">
+    <h3>@right</h3>
 </div>
 {% endblock %}
