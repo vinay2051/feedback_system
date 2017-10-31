@@ -1,3 +1,16 @@
+$('a[href^="#"]').on('click', function(event) {
+
+    var target = $(this.getAttribute('href'));
+
+    if (target.length) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 700);
+    }
+
+});
+
 var btns = document.querySelectorAll('.btn');
 var paginationWrapper = document.querySelector('.pagination-wrapper');
 var bigDotContainer = document.querySelector('.big-dot-container');
