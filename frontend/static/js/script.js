@@ -31,18 +31,6 @@ $(document).ready(function() {
         }
     });
 
-    // $('#lb').bind('click', function() {
-    //     if (sem != 0 && branch != 0) {
-    //         if (sem == 5 && branch == 1) {
-    //             $('#lb').css('visibility', 'visible');
-    //         } else {
-    //             alert("Sorry, data not yet available!");
-    //         }
-    //     } else {
-    //         alert("Please, select the required fields!");
-    //     }
-    // });
-
     function expand(ele, n) {
         ele.removeClass('closed').addClass('open');
 
