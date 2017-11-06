@@ -1,6 +1,7 @@
 {% extends 'frontend/base.html' %} {% load staticfiles %} {% block page%}
 
 <div id="login">
+    <div class="main-head">Suggestion System</div>
     <div class="col_50">
         <div id="select-dropdown" class="script-case-1 closed">
             <div id="select-default" class="select default">Select Semester</div>
@@ -25,7 +26,7 @@
         </div>
     </div>
     <div class="gap"></div>
-    <div class="login-button"><a href="#lecturers" class="log-but" id="lb">Submit</a></div>
+    <div class="login-button"><a href="#lecturers" class="log-but button-visibility" id="lb">Next</a></div>
     <div class="gap"></div>
 </div>
 
@@ -82,6 +83,37 @@
 </div>
 
 <div id="categories">
-    <h2>Choose the categories in which you want to suggest Dr Abeg Jaiswal :</h2>
+    <div class="demo">
+        <div class="demo__title">Select categories to suggest me</div>
+        <div class="demo__content">
+            <label class="switcher">
+                    <input type="checkbox"/>
+                    <div class="switcher__indicator"></div><span>General</span>
+                  </label><br/><br/>
+            <label class="switcher">
+                    <input type="checkbox" checked="checked"/>
+                    <div class="switcher__indicator"></div><span>Communication</span>
+                  </label><br/><br/>
+            <label class="switcher">
+                    <input type="checkbox" checked="disabled"/>
+                    <div class="switcher__indicator"></div><span>Faculty-Student Environment</span>
+                  </label><br/><br/>
+            <label class="switcher">
+                    <input type="checkbox"/>
+                    <div class="switcher__indicator"></div><span>**something**</span>
+                  </label><br/><br/>
+            <label class="switcher">
+                    <input type="checkbox"/>
+                    <div class="switcher__indicator"></div><span>Analysis</span>
+                  </label><br/><br/>
+        </div>
+    </div>
+    <div class="cat-div">
+        <div class="cat-gap"></div>
+        <div class="category-button"><a href="#lecturers" class="log-but">Back</a></div>
+        <div class="cat-gap"></div>
+        <div class="category-button"><a href="#questions" class="log-but button-visibility">Next</a></div>
+        <div class="cat-gap"></div>
+    </div>
 </div>
 {% endblock %}

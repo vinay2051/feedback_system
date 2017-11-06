@@ -2,8 +2,6 @@ $(document).ready(function() {
     var sem = 0;
     var branch = 0;
 
-    $('#lb').css('visibility', 'hidden');
-
     $('#login').localScroll({
         target: 'html'
     });
@@ -67,17 +65,19 @@ $(document).ready(function() {
         });
         if (sem != 0 && branch != 0) {
             if (sem == 5 && branch == 1) {
-                $('body').css('overflow', 'hidden');
-                $('#lb').css('visibility', 'visible');
+                $('#lb').removeClass('button-visibility');
             } else {
-                $('#lb').css('visibility', 'hidden');
-                alert("Sorry, data not yet available!");
+                $('#lb').addClass('button-visibility');
             }
         }
     }
     collapse($('.script-case-1'));
     collapse($('.script-case-2'));
 
+});
+
+$('body').on('mousewheel touchmove', function(e) {
+    e.preventDefault();
 });
 
 var btns = document.querySelectorAll('.btn');
