@@ -1,13 +1,72 @@
-$('a[href^="#"]').on('click', function(event) {
+$(document).ready(function() {
 
-    var target = $(this.getAttribute('href'));
+    $('.script-case-1').bind("click", function() {
+        if ($(this).hasClass('open')) {
+            collapse($(this));
+        } else {
+            expand($(this));
+        }
+    });
+    $('.script-case-2').bind("click", function() {
+        if ($(this).hasClass('open')) {
+            collapse($(this));
+        } else {
+            expand($(this));
+        }
+    });
 
-    if (target.length) {
+    function expand(ele) {
+        ele.removeClass('closed').addClass('open');
+
+        options = ele.find('.select');
+
+        options.each(function(index) {
+            var layer = options.length - index;
+            $(this).css("top", 40 * index + "px");
+            $(this).css("width", 230);
+        });
+        options.bind('click', function() {
+            var selection = $(this).text();
+            ele.find('#select-default').text(selection);
+            var data = $(this).data("id");
+
+            window.dropdown = data;
+            console.log(window.dropdown);
+        });
+    }
+
+    function collapse(ele) {
+        ele.removeClass('open').addClass('closed');
+
+        options = ele.find('.option');
+
+        options.each(function(index) {
+            var layer = options.length - index;
+            $(this).css("z-index", layer);
+            $(this).css("top", 2 * index + "px");
+            $(this).css("width", 230 - 2 * index);
+            $(this).css("margin-left", index);
+        });
+    }
+    collapse($('.script-case-1'));
+    collapse($('.script-case-2'));
+
+
+    $('a[href="#lecturers"]').on('click', function(event) {
+        var target = $('#lecturers');
         event.preventDefault();
         $('html, body').stop().animate({
             scrollTop: target.offset().top
-        }, 700);
-    }
+        }, 800);
+    });
+
+    $('a[href="#categories"]').on('click', function(event) {
+        var target = $('#categories');
+        event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 800);
+    });
 
 });
 

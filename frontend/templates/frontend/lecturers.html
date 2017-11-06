@@ -1,56 +1,85 @@
 {% extends 'frontend/base.html' %} {% load staticfiles %} {% block page%}
-<div class="button-images">
-    <div class="one_fourth">
-        <div class="button-container">
-            <a href="#categories">Dr Abeg Jaiswal</a>
-            <img src="{% static 'assets/abeg.jpg' %}" />
-        </div>
-    </div>
-    <div class="one_fourth">
-        <div class="button-container">
-            <a href="#categories">Dr Mangalraj</a>
-            <img src="{% static 'assets/mangalraj.jpg' %}" />
-        </div>
-    </div>
-    <div class="one_fourth">
-        <div class="button-container">
-            <a href="#categories">Mr Purnendu Pandey</a>
-            <img src="{% static 'assets/purnendu.jpg' %}" />
-        </div>
-    </div>
-    <div class="one_fourth last">
-        <div class="button-container">
-            <a href="#categories">Dr Sudip Sanyal</a>
-            <img src="{% static 'assets/sudip.jpg' %}" />
-        </div>
-    </div>
 
-    <div class="one_fourth next">
-        <div class="button-container">
-            <a href="#categories">Dr Ratna Sanyal</a>
-            <img src="{% static 'assets/ratna.jpg' %}" />
+<div id="login">
+    <div class "login-button"><a href="#lecturers">Login</a></div>
+    <div class="col_50">
+        <div id="select-dropdown" class="script-case-1 closed">
+            <div id="select-default" class="select default">Select Semester</div>
+            <div class="select option" data-id="1">1 Semester</div>
+            <div class="select option" data-id="2">2 Semester</div>
+            <div class="select option" data-id="3">3 Semester</div>
+            <div class="select option" data-id="4">4 Semester</div>
+            <div class="select option" data-id="5">5 Semester</div>
+            <div class="select option" data-id="6">6 Semester</div>
+            <div class="select option" data-id="7">7 Semester</div>
+            <div class="select option" data-id="8">8 Semester</div>
         </div>
     </div>
-
-    <div class="one_fourth">
-        <div class="button-container">
-            <a href="#categories">Mrs Suriti Goel</a>
-            <img src="http://www.fillmurray.com/300/300" />
+    <div class="col_50">
+        <div id="select-dropdown" class="script-case-2 closed">
+            <div id="select-default" class="select default">Select Branch</div>
+            <div class="select option" data-id="1">CSC</div>
+            <div class="select option" data-id="2">CSE</div>
+            <div class="select option" data-id="3">MEC</div>
+            <div class="select option" data-id="4">CIV</div>
+            <div class="select option" data-id="5">ECE</div>
         </div>
     </div>
-
-    <div class="one_fourth last">
-        <div class="button-container">
-            <a href="#categories">Dr Pankaj Sharma</a>
-            <img src="http://www.fillmurray.com/300/300" />
-        </div>
-    </div>
-
-    <div class="clearboth"></div>
 </div>
 
+<div id="lecturers">
+    <div class="button-images">
+        <div class="one_fourth">
+            <div class="button-container">
+                <a href="#categories">Dr Abeg Jaiswal</a>
+                <img src="{% static 'assets/abeg.jpg' %}" />
+            </div>
+        </div>
+        <div class="one_fourth">
+            <div class="button-container">
+                <a href="#categories">Dr Mangalraj</a>
+                <img src="{% static 'assets/mangalraj.jpg' %}" />
+            </div>
+        </div>
+        <div class="one_fourth">
+            <div class="button-container">
+                <a href="#categories">Mr Purnendu Pandey</a>
+                <img src="{% static 'assets/purnendu.jpg' %}" />
+            </div>
+        </div>
+        <div class="one_fourth last">
+            <div class="button-container">
+                <a href="#categories">Dr Sudip Sanyal</a>
+                <img src="{% static 'assets/sudip.jpg' %}" />
+            </div>
+        </div>
 
-<div class="categories" id="categories">
+        <div class="one_fourth next">
+            <div class="button-container">
+                <a href="#categories">Dr Ratna Sanyal</a>
+                <img src="{% static 'assets/ratna.jpg' %}" />
+            </div>
+        </div>
+
+        <div class="one_fourth">
+            <div class="button-container">
+                <a href="#categories">Mrs Suriti Goel</a>
+                <img src="http://www.fillmurray.com/300/300" />
+            </div>
+        </div>
+
+        <div class="one_fourth last">
+            <div class="button-container">
+                <a href="#categories">Dr Pankaj Sharma</a>
+                <img src="http://www.fillmurray.com/300/300" />
+            </div>
+        </div>
+
+        <div class="clearboth"></div>
+    </div>
+</div>
+
+<div id="categories">
     <h2>Choose the categories in which you want to suggest Dr Abeg Jaiswal :</h2>
 </div>
 {% endblock %}
