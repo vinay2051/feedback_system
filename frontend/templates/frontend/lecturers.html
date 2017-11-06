@@ -1,7 +1,6 @@
 {% extends 'frontend/base.html' %} {% load staticfiles %} {% block page%}
 
 <div id="login">
-    <div class "login-button"><a href="#lecturers">Login</a></div>
     <div class="col_50">
         <div id="select-dropdown" class="script-case-1 closed">
             <div id="select-default" class="select default">Select Semester</div>
@@ -25,6 +24,9 @@
             <div class="select option" data-id="5">ECE</div>
         </div>
     </div>
+    <div class="gap"></div>
+    <div class="login-button"><a href="#lecturers" class="log-but" id="lb">Submit</a></div>
+    <div class="gap"></div>
 </div>
 
 <div id="lecturers">

@@ -1,21 +1,49 @@
 $(document).ready(function() {
+    var sem = 0;
+    var branch = 0;
+
+    $('#lb').css('visibility', 'hidden');
+
+    $('#login').localScroll({
+        target: 'html'
+    });
+
+    $('#categories').localScroll({
+        target: 'html'
+    });
+
+    $('#lecturers').localScroll({
+        target: 'html'
+    });
 
     $('.script-case-1').bind("click", function() {
         if ($(this).hasClass('open')) {
             collapse($(this));
         } else {
-            expand($(this));
+            expand($(this), 0);
         }
     });
     $('.script-case-2').bind("click", function() {
         if ($(this).hasClass('open')) {
             collapse($(this));
         } else {
-            expand($(this));
+            expand($(this), 1);
         }
     });
 
-    function expand(ele) {
+    // $('#lb').bind('click', function() {
+    //     if (sem != 0 && branch != 0) {
+    //         if (sem == 5 && branch == 1) {
+    //             $('#lb').css('visibility', 'visible');
+    //         } else {
+    //             alert("Sorry, data not yet available!");
+    //         }
+    //     } else {
+    //         alert("Please, select the required fields!");
+    //     }
+    // });
+
+    function expand(ele, n) {
         ele.removeClass('closed').addClass('open');
 
         options = ele.find('.select');
@@ -29,9 +57,11 @@ $(document).ready(function() {
             var selection = $(this).text();
             ele.find('#select-default').text(selection);
             var data = $(this).data("id");
-
-            window.dropdown = data;
-            console.log(window.dropdown);
+            if (n == 0) {
+                sem = data;
+            } else {
+                branch = data;
+            }
         });
     }
 
@@ -47,26 +77,17 @@ $(document).ready(function() {
             $(this).css("width", 230 - 2 * index);
             $(this).css("margin-left", index);
         });
+        if (sem != 0 && branch != 0) {
+            if (sem == 5 && branch == 1) {
+                $('#lb').css('visibility', 'visible');
+            } else {
+                $('#lb').css('visibility', 'hidden');
+                alert("Sorry, data not yet available!");
+            }
+        }
     }
     collapse($('.script-case-1'));
     collapse($('.script-case-2'));
-
-
-    $('a[href="#lecturers"]').on('click', function(event) {
-        var target = $('#lecturers');
-        event.preventDefault();
-        $('html, body').stop().animate({
-            scrollTop: target.offset().top
-        }, 800);
-    });
-
-    $('a[href="#categories"]').on('click', function(event) {
-        var target = $('#categories');
-        event.preventDefault();
-        $('html, body').stop().animate({
-            scrollTop: target.offset().top
-        }, 800);
-    });
 
 });
 
@@ -118,7 +139,7 @@ var currentSlide = 0;
 questionNumber();
 
 function questionNumber() {
-    leftOption[0].innerHTML = '<h3>' + (currentSlide + 1) + '/' + slides.length + '</h3>';
+    // leftOption[0].innerHTML = '<h3>' + (currentSlide + 1) + '/' + slides.length + '</h3>';
 }
 
 function nextSlide() {
