@@ -5,6 +5,7 @@ body {
     font-family: 'Quicksand', sans-serif;
     height: 100%;
     background: #ffffff;
+    overflow: none;
 }
 
 .slide-wrapper {

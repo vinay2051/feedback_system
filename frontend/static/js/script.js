@@ -67,6 +67,7 @@ $(document).ready(function() {
         });
         if (sem != 0 && branch != 0) {
             if (sem == 5 && branch == 1) {
+                $('body').css('overflow', 'hidden');
                 $('#lb').css('visibility', 'visible');
             } else {
                 $('#lb').css('visibility', 'hidden');
