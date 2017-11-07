@@ -4,7 +4,7 @@ from django.db import models
 
 class Facultie(models.Model):
     _id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=30
+    name = models.CharField(max_length=30)
     email = models.CharField(max_length=300)
     password = models.CharField(max_length=30)
     image = models.ImageField(upload_to = 'static/assets/', default = 'static/assets/no-img.png')
