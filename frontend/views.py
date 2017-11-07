@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 
 def index(request):
-    return render(request, 'frontend/lecturers.html', {'questions':[{'question':'what?','id':1},{'question':'why?','id':2},{'question':'how?','id':3}]})
+    return render(request, 'frontend/lecturers.html', {'semesters':range(1,9), 'branches':get_branch()})
 
-def home(request):
-    return render(request, 'frontend/home.html', {'questions':[{'question':'Is he/she punctual?','id':1},{'question':'Is he/she audible?','id':2},{'question':'Can you understand his/her accent?','id':3}]})
+def get_branch():
+    return [{'id':1, 'branch':'CSC'}, {'id':2, 'branch':'CSE'}, {'id':2, 'branch':'MEC'}, {'id':4, 'branch':'CIV'}, {'id':5, 'branch':'ECE'}]

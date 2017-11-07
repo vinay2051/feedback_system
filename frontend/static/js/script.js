@@ -14,6 +14,10 @@ $(document).ready(function() {
         target: 'html'
     });
 
+    $('#questions').localScroll({
+        target: 'html'
+    });
+
     $('.script-case-1').bind("click", function() {
         if ($(this).hasClass('open')) {
             collapse($(this));
