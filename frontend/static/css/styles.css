@@ -760,3 +760,9 @@ input:disabled+.switcher__indicator::before {
     height: 100vh;
     width: 100%;
 }
+
+.ques-sub-button {
+    text-align: center;
+    float: left;
+    margin-top: 0;
+}
