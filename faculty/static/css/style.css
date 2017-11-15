@@ -1,0 +1,95 @@
+/* home.html styling */
+
+html,
+body {
+    font-family: 'Quicksand', sans-serif;
+    height: 100%;
+    background: #ffffff;
+}
+
+
+/* suggestion */
+
+a.log-but {
+    -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    display: block;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 20px 30px;
+    color: rgba(30, 22, 54, 0.6);
+    box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+}
+
+a.log-but:hover {
+    color: rgba(255, 255, 255, 0.85);
+    box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+}
+
+#suggestion {
+    height: 100vh;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -o-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.card {
+    width: 90%;
+    height: 90%;
+    position: relative;
+    -webkit-perspective: 800px;
+    -ms-perspective: 800px;
+    perspective: 800px;
+    border-radius: 4px;
+}
+
+.suggestion-card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 6px;
+    float: left;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+#piechart {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.sug-but {
+    width: 80%;
+    text-align: center;
+}
+
+.two-third {
+    width: 75%;
+    height: 100%;
+    float: left;
+}
+
+.one-third {
+    width: 25%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

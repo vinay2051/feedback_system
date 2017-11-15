@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        FeedBack System
+    </title>
+    <script src="https://use.fontawesome.com/20957ebe5b.js"></script>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+
+    {% block page%} {% endblock %}
+    <script src="{% static 'js/jquery.localScroll.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollTo.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+
+</body>
+
+</html>
