@@ -16,15 +16,22 @@ body {
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
-    color: #f67954;
+    color: rgba(30, 22, 54, 0.6);
 }
 
 .left {
     left: 10%;
 }
 
+.left h3 {
+    font-size: 22px;
+    font-weight: normal;
+    padding: 10px;
+}
+
 .right {
-    right: 10%;
+    right: 8%;
+    width: 15%;
 }
 
 .pagination {
@@ -70,7 +77,7 @@ body {
 .little-dot {
     width: 6px;
     height: 6px;
-    background: #393994;
+    background: rgba(30, 22, 54, 0.6);
     border-radius: 100%;
     display: inline-block;
     vertical-align: middle;
@@ -142,7 +149,7 @@ body {
     width: 12px;
     height: 12px;
     border-radius: 100%;
-    background: #f6af54;
+    background: #000000;
     position: absolute;
     top: 50%;
     right: -6px;
@@ -200,7 +207,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    fill: #393994;
+    fill: rgba(30, 22, 54, 0.6);
     cursor: pointer;
     transition: opacity 0.2s;
 }
@@ -503,7 +510,7 @@ body {
 }
 
 .open .option:hover {
-    background-color: #DE264C;
+    background-color: rgba(30, 22, 54, 0.6);
     color: #fff;
 }
 
@@ -581,19 +588,22 @@ a.log-but:hover {
     font-weight: 300;
     color: #343C3F;
     text-align: center;
+    float: left;
     position: relative;
 }
 
 .demo__content {
     text-align: left;
     display: inline-block;
+    float: left;
 }
 
 .demo__title {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 300;
     text-transform: uppercase;
     padding-bottom: 30px;
+    text-align: left;
 }
 
 .switcher {
@@ -646,7 +656,7 @@ a.log-but:hover {
 }
 
 input:checked+.switcher__indicator::after {
-    background-color: #29ce9a;
+    background-color: rgba(30, 22, 54, 1);
     -webkit-transform: translateX(40px);
     transform: translateX(40px);
     -webkit-animation-name: pulseout;
@@ -656,7 +666,7 @@ input:checked+.switcher__indicator::after {
 }
 
 input:checked+.switcher__indicator::before {
-    background-color: #29ce9a;
+    background-color: rgba(30, 22, 54, 0.3);
 }
 
 input:disabled+.switcher__indicator::after,
@@ -764,6 +774,7 @@ input:disabled+.switcher__indicator::before {
 .ques-sub-button {
     text-align: center;
     float: left;
+    width: 100%;
     margin-top: 0;
 }
 
@@ -812,11 +823,11 @@ input:disabled+.switcher__indicator::before {
 }
 
 .option-input:hover {
-    background: #9faab7;
+    background: rgba(30, 22, 54, 0.6);
 }
 
 .option-input:checked {
-    background: #40e0d0;
+    background: rgba(30, 22, 54, 0.6);
 }
 
 .option-input:checked::before {
@@ -834,7 +845,7 @@ input:disabled+.switcher__indicator::before {
     -webkit-animation: click-wave 0.65s;
     -moz-animation: click-wave 0.65s;
     animation: click-wave 0.65s;
-    background: #40e0d0;
+    background: rgba(30, 22, 54, 0.6);
     content: '';
     display: block;
     position: relative;
@@ -852,4 +863,78 @@ input:disabled+.switcher__indicator::before {
 .option-label {
     display: block;
     line-height: 40px;
+}
+
+.op_text {
+    font-size: 23px;
+    font-weight: 300;
+    padding: 10px;
+}
+
+
+/* suggestion */
+
+#suggestion {
+    height: 100vh;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -o-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.card {
+    width: 90%;
+    height: 90%;
+    position: relative;
+    -webkit-perspective: 800px;
+    -ms-perspective: 800px;
+    perspective: 800px;
+    border-radius: 4px;
+}
+
+.suggestion-card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 6px;
+    float: left;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+#piechart {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.sug-but {
+    width: 80%;
+    text-align: center;
+}
+
+.two-third {
+    width: 75%;
+    height: 100%;
+    float: left;
+}
+
+.one-third {
+    width: 25%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

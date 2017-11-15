@@ -47,11 +47,14 @@ class Option(models.Model):
 
 class Suggestion(models.Model):
     _id = models.AutoField(primary_key=True)
-    question_id = models.ForeignKey(Question, on_delete=models.CASCADE, verbose_name="the related question")
-    weight = models.BigIntegerField()
-    phrase = models.CharField(max_length=30)
+    sem = models.CharField(max_length=30)
+    branch = models.CharField(max_length=30)
+    course_id = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name="the related course")
+    faculty_id = models.ForeignKey(Facultie, on_delete=models.CASCADE, verbose_name="the related faculty")
+    category = models.CharField(max_length=30)
+    score = models.BigIntegerField()
     def __str__(self):
-        return self.phrase
+        return "suggestion"
 
 class FeedBack(models.Model):
     _id = _id = models.AutoField(primary_key=True)
