@@ -3,12 +3,13 @@ import json
 from django.core import serializers
 from django.http import HttpResponse
 from frontend.models import Suggestion, Facultie, Course
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
-
+@csrf_exempt
 def index(request):
     return render(request, 'faculty/index.html')
-
+@csrf_exempt
 def review(request):
     datas = list(Suggestion.objects.values('category', 'score'))
     score = [['Category', 'Weightage']]

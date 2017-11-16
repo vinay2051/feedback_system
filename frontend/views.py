@@ -5,16 +5,17 @@ from django.http import HttpResponse
 from itertools import chain
 from random import shuffle
 from .models import Facultie, Course, Question, Option, Suggestion
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
-
+@csrf_exempt
 def index(request):
     semester = Course.objects.values_list('sem', flat = True)
     semester = list(set(semester))
     branch = Course.objects.values_list('branch', flat = True)
     branch = list(set(branch))
     return render(request, 'frontend/index.html', {'semesters':semester, 'branches':branch})
-
+@csrf_exempt
 def lecturers(request):
     semester = request.POST.get('semester')
     branch = request.POST.get('branch')
@@ -46,14 +47,14 @@ def lecturers(request):
 #     for question in result_list:
 #         question['options'] = list(Option.objects.filter(question=int(question['pk'])).select_related().values('option', 'pk'))
 #     return HttpResponse(json.dumps(result_list), content_type='application/json')
-
+@csrf_exempt
 def questions(request):
     questions = list(Question.objects.values('question', 'pk'))
     shuffle(questions)
     for question in questions:
         question['options'] = list(Option.objects.filter(question=int(question['pk'])).select_related().values('option', 'pk'))
     return HttpResponse(json.dumps(questions), content_type='application/json')
-
+@csrf_exempt
 def suggestion(request):
     options_list = request.POST.getlist('options[]')
     categories = Question.objects.values_list('category', flat=True)
@@ -70,7 +71,7 @@ def suggestion(request):
         array_score.append([s, score[s]])
         data = {'json': score, 'array':array_score}
     return HttpResponse(json.dumps(data), content_type='application/json')
-
+@csrf_exempt
 def submit(request):
     semester = request.POST.get('semester')
     branch = request.POST.get('branch')
